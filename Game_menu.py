@@ -11,14 +11,14 @@ clock = pygame.time.Clock()
 # Initialize database
 init_db()
 
-# --- Load background image ---
+# Load background image 
 try:
     bg_image = pygame.image.load("menu_bg.jpg")
     bg_image = pygame.transform.scale(bg_image, (800, 600))
 except:
-    bg_image = None  # fallback if image not found
+    bg_image = None  
 
-# --- Draw menu ---
+# Draw menu 
 def draw_menu(options, selected_idx):
     if bg_image:
         screen.blit(bg_image, (0,0))
