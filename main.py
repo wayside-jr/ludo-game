@@ -8,10 +8,7 @@ from Dice import roll_dice, clicking_dice, draw_dice
 from db import init_db, save_game, list_games, load_game, delete_game  
 
 PANEL_WIDTH = 300
-
-
 BG_COLOR = (255, 192, 203)
-
 
 MENU_BG_IMAGE = pygame.image.load("/home/code/Desktop/ludo-game/pngtree-ludo-gul-spill-gøy-photo-image_19080058.jpg")
 
@@ -256,9 +253,13 @@ def game_loop(pawns, dice_number, current_idx, user_turn, human_colors, dice_sou
                         for pawn in pawns:
                             if pawn["color"] == current_color:
                                 x, y = PATHS[pawn["color"]][pawn["position_index"]] if pawn["started"] else pawn["home"]
-                                center_x = x * BOX + BOX // 2
-                                center_y = y * BOX + BOX // 2
-                                if (mx - center_x)**2 + (my - center_y)**2 <= (BOX//2)**2:
+
+                                # ✅ FIXED pawn click detection (scaled)
+                                center_x = int(x * BOX * scale + (BOX // 2) * scale)
+                                center_y = int(y * BOX * scale + (BOX // 2) * scale)
+                                radius = int((BOX // 2) * scale)
+
+                                if (mx - center_x)**2 + (my - center_y)**2 <= radius**2:
                                     reached_home, captured = move_pawn(pawn, dice_number, pawns)
                                     clicked = True
                                     waiting_for_pawn_click = False
