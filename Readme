@@ -1,0 +1,29 @@
+# Features
+4-player Ludo gameplay (human vs computer).
+Animated dice rolling with sound effects.
+Color selection for human players.
+Save & load game states using SQLite.
+Delete saved games from the database.
+Background music and dice sound effects.
+
+# Tools i used
+i used pygame
+i also include sqlite3 in creating a database
+i also used json
+
+# what about the project
+This project is a digital recreation of the classic Ludo board game, developed in Python using the Pygame library. The game combines the nostalgic board game experience with the convenience of playing on your computer.
+When you start the game, you are welcomed with an interactive main menu, where you can choose to start a new game, load a previously saved game, delete saved games, or exit. Players can select the number of human players 4 players and pick their pawn colors (Green, Red, Yellow, Blue). The remaining spots are filled with computer-controlled opponents that follow the rules of Ludo and play automatically.
+The game board is displayed on the left side of the screen, while a side panel on the right provides game controls and updates. From the side panel, you can roll the dice, view turn information, read in-game messages, save your progress, and exit the game. The dice are fully visualized with animated pips, and rolling is accompanied by a realistic dice sound effect.
+
+'Gameplay follows the standard Ludo rules:'
+Pawns can only leave their base when the player rolls a 6.
+Players move pawns around the board according to the dice roll.
+Capturing an opponent’s pawn sends it back to its base.
+Pawns must reach the home area by completing a full lap around the board.
+Rolling a 6 gives the player another turn.
+
+The project also includes a save and load system created by SQLite and JSON serialization. This allows players to pause their game and resume later without losing progress. The user can manage saved games directly from the menu.
+
+To enhance the playing experience, the game includes background music and sound effects.
+
